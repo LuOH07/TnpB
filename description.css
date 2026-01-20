@@ -1,0 +1,522 @@
+/* Description页面样式 - Word文档简洁版 */
+
+.description-container {
+    display: flex;
+    min-height: calc(100vh - 70px);
+    margin-top: 70px;
+    background-color: #f8fafc;
+    position: relative;
+}
+
+/* 侧边栏样式 - 悬浮圆角矩形（无标题和图标） */
+.sidebar {
+    width: 220px;
+    background: linear-gradient(135deg, #1a5fb4 0%, #2d8ae5 100%);
+    color: white;
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    height: auto;
+    max-height: 60vh;
+    overflow-y: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(26, 95, 180, 0.3);
+    z-index: 100;
+    padding: 20px 0;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* 隐藏侧边栏标题 */
+.sidebar-header {
+    display: none;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin: 0;
+}
+
+.sidebar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: white !important;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    border-left: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+    justify-content: center; /* 居中显示文字 */
+}
+
+.sidebar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.sidebar-nav .nav-link:hover::before {
+    left: 100%;
+}
+
+/* 移除图标样式 */
+.sidebar-nav .nav-link i {
+    display: none; /* 隐藏图标 */
+}
+
+.sidebar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white !important;
+    border-left-color: #ffd166;
+    padding-left: 25px;
+}
+
+.sidebar-nav .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white !important;
+    border-left-color: #ffd166;
+    font-weight: 600;
+}
+
+.sidebar-nav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    right: 15px;
+    width: 8px;
+    height: 8px;
+    background-color: #ffd166;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 209, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 6px rgba(255, 209, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 209, 102, 0);
+    }
+}
+
+/* 内容区域样式 */
+.content-wrapper {
+    flex: 1;
+    margin-left: 260px;
+    padding: 30px 40px;
+    max-width: calc(100% - 260px);
+    background-color: transparent;
+}
+
+.page-header {
+    margin-bottom: 40px;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    color: #1a5fb4;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-align: left;
+}
+
+/* 移除不需要的样式 */
+.page-header .subtitle,
+.project-info {
+    display: none;
+}
+
+/* Word文档样式区域 - 直接显示在背景上 */
+.document-content {
+    position: relative;
+    margin-bottom: 60px;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    min-height: 400px; /* 确保有最小高度，以便竖线可见 */
+}
+
+.document-body {
+    position: relative;
+    margin-left: 60px;
+    margin-right: 12em; /* 右侧留12字符空白 */
+    padding: 20px 0;
+    background: transparent;
+}
+
+/* 竖直线 - 跟随正文内容 */
+.document-vertical-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #1a5fb4, #2d8ae5);
+    z-index: 1;
+}
+
+.document-title {
+    font-size: 1.8rem;
+    color: #1a5fb4;
+    margin: 40px 0 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    padding-right: 1em;
+    background: transparent;
+}
+
+.document-title:first-child {
+    margin-top: 0;
+}
+
+/* 次级标题样式 */
+.document-subtitle {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 30px 0 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    padding-right: 1em;
+    background: transparent;
+}
+
+.document-subtitle:first-child {
+    margin-top: 20px;
+}
+
+.document-paragraph {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1.5em;
+    text-align: left;
+    text-indent: 2em;
+    padding-right: 1em;
+    background: transparent;
+}
+
+.document-paragraph strong {
+    color: #1a5fb4;
+    font-weight: 700;
+}
+
+/* 图片容器样式 - 已修改 */
+.document-image-container {
+    margin: 25px 0 50px; /* 增加下边距为50px，与下一段增加间距 */
+    text-align: center;
+    padding-right: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 居中对齐所有子元素 */
+}
+
+.document-image {
+    max-width: 700px; /* 统一设置最大宽度为700px */
+    width: auto;
+    height: auto;
+    max-height: 500px; /* 设置最大高度，防止图片过高 */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    display: block; /* 确保图片是块级元素 */
+    margin: 0 auto; /* 水平居中 */
+}
+
+/* 图片说明文字样式 - 已修改 */
+.image-caption {
+    font-size: 0.95rem;
+    color: #666;
+    font-style: italic;
+    line-height: 1.5;
+    margin-top: 10px;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 10px;
+    width: 100%; /* 确保宽度100%以便居中 */
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 200px;
+        left: 15px;
+    }
+    
+    .content-wrapper {
+        margin-left: 240px;
+        max-width: calc(100% - 240px);
+        padding: 25px 30px;
+    }
+    
+    .document-body {
+        margin-left: 50px;
+        margin-right: 10em;
+    }
+    
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .document-image {
+        max-width: 600px; /* 调整中等屏幕下的最大宽度 */
+        max-height: 450px;
+    }
+}
+
+@media (max-width: 992px) {
+    .description-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        transform: none;
+        width: 100%;
+        max-height: 70px;
+        border-radius: 0;
+        padding: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        z-index: 999;
+    }
+    
+    .sidebar-nav ul {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        height: 70px;
+        align-items: center;
+    }
+    
+    .sidebar-nav li {
+        flex: 0 0 auto;
+        margin: 0;
+    }
+    
+    .sidebar-nav .nav-link {
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        padding: 0 20px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        justify-content: center;
+    }
+    
+    .sidebar-nav .nav-link:hover,
+    .sidebar-nav .nav-link.active {
+        border-left: none;
+        border-bottom-color: #ffd166;
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+    
+    .sidebar-nav .nav-link.active::after {
+        display: none;
+    }
+    
+    .content-wrapper {
+        margin-left: 0;
+        max-width: 100%;
+        padding: 100px 20px 25px 20px;
+    }
+    
+    .document-body {
+        margin-left: 40px;
+        margin-right: 6em;
+    }
+    
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .document-title {
+        font-size: 1.7rem;
+    }
+    
+    .document-subtitle {
+        font-size: 1.4rem;
+        margin: 25px 0 12px;
+    }
+    
+    /* 响应式图片调整 */
+    .document-image {
+        max-width: 500px;
+        max-height: 400px;
+    }
+    
+    .image-caption {
+        font-size: 0.9rem;
+        max-width: 600px;
+    }
+    
+    .document-image-container {
+        margin: 20px 0 40px; /* 调整移动端的下边距 */
+    }
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 100px 15px 20px 15px;
+    }
+    
+    .document-body {
+        margin-left: 30px;
+        margin-right: 4em;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .document-title {
+        font-size: 1.5rem;
+        margin: 30px 0 15px;
+    }
+    
+    .document-subtitle {
+        font-size: 1.3rem;
+        margin: 20px 0 10px;
+    }
+    
+    .document-paragraph {
+        font-size: 1.05rem;
+        text-indent: 1.5em;
+    }
+    
+    /* 响应式图片调整 */
+    .document-image-container {
+        margin: 20px 0 35px;
+    }
+    
+    .document-image {
+        max-width: 400px;
+        max-height: 350px;
+    }
+    
+    .image-caption {
+        font-size: 0.85rem;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-wrapper {
+        padding: 100px 10px 15px 10px;
+    }
+    
+    .document-body {
+        margin-left: 25px;
+        margin-right: 2em;
+    }
+    
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .document-title {
+        font-size: 1.3rem;
+        margin: 25px 0 12px;
+    }
+    
+    .document-subtitle {
+        font-size: 1.2rem;
+        margin: 18px 0 8px;
+    }
+    
+    .document-paragraph {
+        font-size: 1rem;
+        text-indent: 1.2em;
+    }
+    
+    /* 响应式图片调整 */
+    .document-image-container {
+        margin: 15px 0 30px;
+    }
+    
+    .document-image {
+        max-width: 300px;
+        max-height: 250px;
+    }
+    
+    .image-caption {
+        font-size: 0.8rem;
+        padding: 0 5px;
+    }
+}
+
+/* 滚动指示器 */
+.scroll-indicator {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    display: none;
+}
+
+.scroll-dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(26, 95, 180, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.scroll-dot.active {
+    background-color: #1a5fb4;
+    transform: scale(1.3);
+}
+
+.scroll-dot:hover {
+    background-color: #1a5fb4;
+    transform: scale(1.2);
+}
+
+@media (min-width: 993px) {
+    .scroll-indicator {
+        display: flex;
+    }
+}

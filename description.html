@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Description - iGEM XMU</title>
+
+    <!-- 外部样式表 -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="description.css">
+
+    <!-- 外部资源 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="description-page">
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="assets/footer-xmulogo.png" alt="XMULogo" class="logo-img">
+                <div class="logo-text">iGEM <span>XMU</span></div>
+            </div>
+
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <span class="nav-text">HOME</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#team" class="nav-link">
+                        <span class="nav-text">TEAM</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown-item">
+                    <a href="#" class="nav-link">
+                        <span class="nav-text" style="font-weight: bold;">PROJECT</span>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="description.html" class="active">Description</a></li>
+                        <li><a href="design.html">Design</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#drylab" class="nav-link">
+                        <span class="nav-text">DRYLAB</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#parts" class="nav-link">
+                        <span class="nav-text">PARTS</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#hp" class="nav-link">
+                        <span class="nav-text">HP</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 主内容区域 -->
+    <main class="description-container">
+        <!-- 左侧索引栏 -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#crisis" class="nav-link active">耐药性危机</a></li>
+                    <li><a href="#phage" class="nav-link">噬菌体疗法</a></li>
+                    <li><a href="#crispr" class="nav-link">CRISPR再敏化疗法</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- 右侧内容区域 -->
+        <div class="content-wrapper">
+            <!-- 标题区域 - 简化为Description -->
+            <section class="page-header">
+                <h1>Description</h1>
+            </section>
+
+            <!-- 内容区域 - Word文档样式 -->
+            <div class="document-content">
+                <!-- 蓝色竖线 -->
+                <div class="document-vertical-line"></div>
+
+                <div class="document-body">
+                    <section id="crisis">
+                        <h2 class="document-title">耐药性危机</h2>
+                        <div class="document-paragraph">
+                            自抗生素发现以来，其大量使用（甚至是滥用）已造成耐药菌的广泛出现，大幅削弱了抗生素疗法的效果。
+                        </div>
+                        <div class="document-paragraph">
+                            研究显示，即使经过了31年的科技发展，2021年中耐药菌在20岁及以上人群中直接/间接造成的死亡数相较1990年都有上升，足见耐药性威胁增大之严峻。
+                        </div>
+
+                        <!-- 新增图片和说明 -->
+                        <div class="document-image-container">
+                            <img src="flowchart/图片1.png" alt="1990-2021年抗生素相关疾病死亡统计" class="document-image">
+                            <p class="image-caption">
+                                图中展示了1990-2021年抗生素相关/直接导致的疾病在各年龄段造成的死亡。其中，0-19岁人群死亡数下降，但20岁及以上人群死亡数在31年的科技发展后反而上升。
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id="phage">
+                        <h2 class="document-title">噬菌体疗法</h2>
+                        <div class="document-paragraph">
+                            为解决上述问题，研究者们捡起了被雪藏已久的噬菌体疗法，通过使用对应的噬菌体来杀灭耐药菌，并取得了尚可的疗效。
+                        </div>
+                        <div class="document-paragraph">
+                            然而，在细菌与噬菌体的长期协同进化中，细菌表现出了各种抵御噬菌体侵染的机制，包括CRISPR系统，流产感染系统等。可以预见，在噬菌体的选择压力下，会出现拥有噬菌体抗性的耐药菌。
+                        </div>
+
+                        <!-- 新增第二张图片和说明 -->
+                        <div class="document-image-container">
+                            <img src="flowchart/图片2.png" alt="噬菌体疗法成功治疗耐碳青霉烯鲍曼不动杆菌感染案例" class="document-image">
+                            <p class="image-caption">
+                                图中是一名患有耐碳青霉烯鲍曼不动杆菌感染引发的重症急性胰腺炎的患者，在包括抗生素疗法在内的传统治疗手段全部失效的情况下，西安交通大学第一附属医院于今年9月对患者使用噬菌体疗法，成功使患者脱离生命危险，并初步恢复正常生活能力。
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id="crispr">
+                        <h2 class="document-title">CRISPR再敏化疗法</h2>
+                        <div class="document-paragraph">
+                            在噬菌体疗法之外，也有研究者尝试利用CRISPR-Cas系统特异性切除目标基因，以期实现耐药菌的去敏化。
+                        </div>
+                        <div class="document-paragraph">
+                            然而，这种技术存在着杀伤非致病菌的特异性问题，且CRISPR-Cas系统不易进入细胞。如果利用噬菌体搭载CRISPR-Cas系统，虽然解决了特异性问题，但又带来了新的限制：
+                        </div>
+                        <div class="document-paragraph">
+                            1. 部分噬菌体容量较小，无法携带大体积的CRISPR-Cas系统，限制了目标细菌范围，或必须分装在不同噬菌体个体中，降低工作效率。
+                        </div>
+                        <div class="document-paragraph">
+                            2. 噬菌体在与细菌的协同进化过程中产生的Anti-CRISPR系统也会降低CRISPR-Cas系统工作效率。
+                        </div>
+                        <div class="document-paragraph">
+                            3. 如果不去除噬菌体增殖能力，会杀死一切对噬菌体敏感的细菌，推动细菌向双抗性方向进化；如果去除增殖能力，则需要增加给药量与给药频率，或工作效率低下。
+                        </div>
+
+                        <!-- 新增第三张图片和说明 -->
+                        <div class="document-image-container">
+                            <img src="flowchart/图片3.png" alt="CRISPR-Cas系统靶向切割细菌耐药基因流程" class="document-image">
+                            <p class="image-caption">
+                                图中展示了CRISPR-Cas系统靶向切割细菌耐药基因的大体流程。与常见的CRISPR基因编辑过程类似，研究者通过编辑sgRNA特异性识别并切割了碳青霉烯酶基因（blaKPC, blaNDM）和移动性粘菌素耐药基因（mcr-1）
+                            </p>
+                        </div>
+
+                        <div class="document-paragraph">
+                            基于上述两种疗法的局限，本课题提出<strong>噬菌体-TnpB疗法</strong>：将小型化的 TnpB基因编辑系统与噬菌体疗法融合，通过噬菌体的高特异性实现TnpB系统的精准递送，同时将噬菌体增殖与耐药基因切割关联——仅在TnpB切割耐药基因触发细菌SOS响应时，噬菌体才启动增殖，既保证杀菌效率，又避免无差别杀伤非致病菌，实现"高效、高特异、单次给药"的耐药菌再敏化目标。
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer-container">
+        <div class="menu">
+            <div class="toggle">
+                <i class="fa fa-angle-double-up"></i>
+                <img src="https://static.igem.wiki/teams/5549/footer/top.webp" alt="">
+            </div>
+        </div>
+
+        <div id="myFooter">
+            <div class="footer-xiaohui">
+                <img src="https://static.igem.wiki/teams/5549/footer/xmulogo.webp" alt="厦门大学logo">
+            </div>
+            <div class="footer-xiaoming">
+                <img src="https://static.igem.wiki/teams/5549/footer/xiaoming.webp" alt="">
+            </div>
+            <div class="footer-didian">
+                <div class="footer-didianming">
+                    Xiamen University, Fujian, China<br>
+                    No.422, Siming South Road, Fujian, <br>P.R.China 361005
+                </div>
+            </div>
+            <div class="footer-duihui">
+                <img src="https://static.igem.wiki/teams/5549/footer/duihui.webp" alt="">
+            </div>
+            <div class="footer-follow">
+                <!-- 第一行 -->
+                <div class="footer-wechat">
+                    <a href="https://static.igem.wiki/teams/5136/header-footer-img/wechat.png">
+                        <img src="assets/footer-wechat.png" alt="微信" style="max-width: 100%;">
+                    </a>
+                </div>
+                <div class="footer-facebook">
+                    <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2FIGEM-XMU-China-1067638406629389">
+                        <img src="assets/footer-f.png" alt="Facebook" style="max-width: 100%;">
+                    </a>
+                </div>
+                <div class="footer-ins">
+                    <a href="https://www.instagram.com/xmu_china_igem">
+                        <img src="assets/footer-o.png" alt="Instagram" style="max-width: 100%;">
+                    </a>
+                </div>
+                <!-- 第二行 -->
+                <div class="footer-weibo">
+                    <a href="https://weibo.com/u/7482868083">
+                        <img src="assets/footer-wb.png" alt="微博" style="max-width: 100%;">
+                    </a>
+                </div>
+                <div class="footer-twitter">
+                    <a href="https://twitter.com/XMU_igem">
+                        <img src="assets/footer-x.png" alt="Twitter" style="max-width: 100%;">
+                    </a>
+                </div>
+                <div class="footer-email">
+                    <a href="mailto:igem_xmu@163.com">
+                        <img src="assets/footer-mail.png" alt="Email" style="max-width: 100%;">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bar"></div>
+            <div class="footer-contact">
+                <div class="footer-contactus">
+                    Contact Us
+                </div>
+                <img src="https://static.igem.wiki/teams/5549/footer/mail.webp" alt="邮件图标">
+                <div class="footer-mail">
+                    igem_xmu@163.com
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 iGEM XMU Team. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- 外部JavaScript文件 -->
+    <script src="script.js"></script>
+    <script src="description.js"></script>
+</body>
+</html>
