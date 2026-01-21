@@ -1,5 +1,11 @@
 // 导航栏滚动效果
 window.addEventListener('scroll', function() {
+    // 如果当前页面是description或design页面，则不执行滚动效果
+    if (document.body.classList.contains('description-page') || 
+        document.body.classList.contains('design-page')) {
+        return;
+    }
+
     const header = document.querySelector('.header');
     const logoText = document.querySelector('.logo-text');
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn i');
@@ -124,7 +130,19 @@ if (toggleBtn) {
 
 // 页面加载时检查滚动位置
 window.addEventListener('load', function() {
-    if (window.scrollY > 50) {
+    // 如果是description或design页面，设置页眉为滚动状态
+    if (document.body.classList.contains('description-page') || 
+        document.body.classList.contains('design-page')) {
+        const header = document.querySelector('.header');
+        if (header) {
+            header.classList.add('scrolled');
+        }
+        // 设置移动菜单按钮颜色
+        const mobileMenuIcon = document.querySelector('.mobile-menu-btn i');
+        if (mobileMenuIcon) {
+            mobileMenuIcon.style.color = '#1a5fb4';
+        }
+    } else if (window.scrollY > 50) {
         document.querySelector('.header').classList.add('scrolled');
         // 设置移动菜单按钮颜色
         const mobileMenuIcon = document.querySelector('.mobile-menu-btn i');

@@ -776,3 +776,34 @@ body {
         margin-bottom: 15px; /* 修改：减少底部外边距，原为20px */
     }
 }
+
+/* 在首页的"iGEM XMU 团队简介"前添加空行 */
+#about .text-content h3 {
+    margin-top: 2rem; /* 添加上方间距，创建空行效果 */
+}
+
+/* 确保其他部分的标题不受影响 */
+#team .text-content h3,
+#project-description .text-content h3,
+#project-design .text-content h3 {
+    margin-top: 0; /* 保持原来的顶部间距 */
+}
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    #about .text-content h3 {
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #about .text-content h3 {
+        margin-top: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #about .text-content h3 {
+        margin-top: 1rem;
+    }
+}
